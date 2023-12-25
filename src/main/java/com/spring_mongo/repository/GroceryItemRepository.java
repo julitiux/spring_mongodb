@@ -1,5 +1,6 @@
-package com.spring_mongo.domain;
+package com.spring_mongo.repository;
 
+import com.spring_mongo.domain.GroceryItem;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
