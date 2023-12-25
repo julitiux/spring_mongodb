@@ -1,4 +1,9 @@
 package com.spring_mongo.domain;
 
-public interface GroceryItemRepository {
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface GroceryItemRepository extends MongoRepository<GroceryItem, String> {
+
 }
