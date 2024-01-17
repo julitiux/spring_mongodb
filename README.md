@@ -5,3 +5,7 @@ docker run -it -v /Users/rrodriguez/git/github/mondongo/data/:/data --name mongo
 
 # execute a terminal mongosh
 docker exec -it mongodb mongosh
+
+# starting and ending the service Mongo Docker 
+docker start mongodb
+docker stop mongodb
