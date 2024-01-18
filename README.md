@@ -15,3 +15,11 @@ docker stop mongodb
 db.createCollection("catalog")
 db.createCollection("catalog_capped",{capped: true, autoIndexId: true, size: 64 * 1024, max: 1000} )
 db.runCommand( { create: "catalog_capped_2", capped: true, size: 64 * 1024, max: 1000 } )
+
+# add user admin into MongoDB
+use admin
+db.createUser({
+  user: "admin",
+  pwd: "contraseña_admin",
+  roles: ["root"]
+})
