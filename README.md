@@ -23,6 +23,3 @@ db.createUser({
   pwd: "contraseña_admin",
   roles: ["root"]
 })
-
-UNO
-DOS
