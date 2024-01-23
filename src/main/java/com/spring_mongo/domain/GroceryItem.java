@@ -12,6 +12,13 @@ public class GroceryItem {
   private int quantity;
   private String category;
 
+  public GroceryItem(String id, String name, int quantity, String category) {
+    this.id = id;
+    this.name = name;
+    this.quantity = quantity;
+    this.category = category;
+  }
+
   public GroceryItem() {
   }
 
