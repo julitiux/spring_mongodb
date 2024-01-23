@@ -20,6 +20,6 @@ db.runCommand( { create: "catalog_capped_2", capped: true, size: 64 * 1024, max:
 use admin
 db.createUser({
   user: "admin",
-  pwd: "contraseña_admin",
+  pwd: "admin",
   roles: ["root"]
 })
