@@ -11,5 +11,6 @@ public interface GroceryItemService {
   Optional<GroceryItem> findById(String id);
   boolean existsById(String id);
   Iterable<GroceryItem> findAll();
+  Iterable<GroceryItem> findAllByIds(Iterable<String> ids);
 
 }
