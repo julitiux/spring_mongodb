@@ -15,5 +15,6 @@ public interface GroceryItemService {
   long count();
   void deleteById(String id);
   void delete(GroceryItem groceryItem);
+  void deleteAllById(Iterable<String> strings);
 
 }
