@@ -1,12 +1,20 @@
 package com.spring_mongo.service;
 
 import com.spring_mongo.domain.GroceryItem;
+import com.spring_mongo.repository.GroceryItemRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
 public class GroceryItemServiceImpl implements GroceryItemService {
+
+  private final GroceryItemRepository groceryItemRepository;
+
+  public GroceryItemServiceImpl(GroceryItemRepository groceryItemRepository) {
+    this.groceryItemRepository = groceryItemRepository;
+  }
+
 
   @Override
   public GroceryItem save(GroceryItem groceryItem) {
