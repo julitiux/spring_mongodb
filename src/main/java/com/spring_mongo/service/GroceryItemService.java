@@ -13,5 +13,6 @@ public interface GroceryItemService {
   Iterable<GroceryItem> findAll();
   Iterable<GroceryItem> findAllByIds(Iterable<String> ids);
   long count();
+  void deleteById(String id);
 
 }
