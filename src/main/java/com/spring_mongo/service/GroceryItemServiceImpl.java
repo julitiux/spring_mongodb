@@ -18,61 +18,61 @@ public class GroceryItemServiceImpl implements GroceryItemService {
 
   @Override
   public GroceryItem save(GroceryItem groceryItem) {
-    return null;
+    return groceryItemRepository.save(groceryItem);
   }
 
   @Override
   public Iterable<GroceryItem> saveAll(Iterable<GroceryItem> groceryItems) {
-    return null;
+    return groceryItemRepository.saveAll(groceryItems);
   }
 
   @Override
   public Optional<GroceryItem> findById(String id) {
-    return Optional.empty();
+    return groceryItemRepository.findById(id);
   }
 
   @Override
   public boolean existsById(String id) {
-    return false;
+    return groceryItemRepository.existsById(id);
   }
 
   @Override
   public Iterable<GroceryItem> findAll() {
-    return null;
+    return groceryItemRepository.findAll();
   }
 
   @Override
   public Iterable<GroceryItem> findAllByIds(Iterable<String> ids) {
-    return null;
+    return groceryItemRepository.findAllById(ids);
   }
 
   @Override
   public long count() {
-    return 0;
+    return groceryItemRepository.count();
   }
 
   @Override
   public void deleteById(String id) {
-
+    groceryItemRepository.deleteById(id);
   }
 
   @Override
   public void delete(GroceryItem groceryItem) {
-
+    groceryItemRepository.delete(groceryItem);
   }
 
   @Override
   public void deleteAllById(Iterable<String> strings) {
-
+    groceryItemRepository.deleteAllById(strings);
   }
 
   @Override
   public void deleteAll(Iterable<GroceryItem> groceryItems) {
-
+    groceryItemRepository.deleteAll(groceryItems);
   }
 
   @Override
   public void deleteAll() {
-
+    groceryItemRepository.deleteAll();
   }
 }
