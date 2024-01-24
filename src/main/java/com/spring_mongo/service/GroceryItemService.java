@@ -10,5 +10,6 @@ public interface GroceryItemService {
   Iterable<GroceryItem> saveAll(Iterable<GroceryItem> groceryItems);
   Optional<GroceryItem> findById(String id);
   boolean existsById(String id);
+  Iterable<GroceryItem> findAll();
 
 }
