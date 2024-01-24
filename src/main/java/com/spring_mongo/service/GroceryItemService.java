@@ -16,5 +16,6 @@ public interface GroceryItemService {
   void deleteById(String id);
   void delete(GroceryItem groceryItem);
   void deleteAllById(Iterable<String> strings);
+  void deleteAll(Iterable<GroceryItem> groceryItems);
 
 }
