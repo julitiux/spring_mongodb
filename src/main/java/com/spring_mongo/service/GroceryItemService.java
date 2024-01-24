@@ -12,5 +12,6 @@ public interface GroceryItemService {
   boolean existsById(String id);
   Iterable<GroceryItem> findAll();
   Iterable<GroceryItem> findAllByIds(Iterable<String> ids);
+  long count();
 
 }
