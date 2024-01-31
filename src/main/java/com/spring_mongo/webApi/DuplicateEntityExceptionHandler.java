@@ -18,7 +18,7 @@ public class DuplicateEntityExceptionHandler {
       "entity", exception.getEntityName(),
       "duplicateId", exception.getEntityId()
     );
-    return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
+    return new ResponseEntity<>(body, HttpStatus.CONFLICT);
   }
 
 }
