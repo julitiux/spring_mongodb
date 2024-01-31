@@ -1,4 +1,4 @@
-package com.spring_mongo.webApi;
+package com.spring_mongo.webApi.handler;
 
 import com.spring_mongo.domain.DuplicateEntity;
 import org.springframework.http.HttpStatus;
