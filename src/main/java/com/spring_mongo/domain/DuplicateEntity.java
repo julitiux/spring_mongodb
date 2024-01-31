@@ -1,5 +1,8 @@
 package com.spring_mongo.domain;
 
+import lombok.Getter;
+
+@Getter
 public class DuplicateEntity extends RuntimeException {
 
   private final String entityName;
