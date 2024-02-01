@@ -11,10 +11,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
 import java.util.Objects;
 
 @Controller
+@RequestMapping(value = "grocery_item")
 public class GroceryItemController {
 
   final private GroceryItemService groceryItemService;
@@ -23,13 +26,23 @@ public class GroceryItemController {
     this.groceryItemService = groceryItemService;
   }
 
-  @RequestMapping(value = "grocery_item", method = RequestMethod.POST)
+  @RequestMapping(value = "/add", method = RequestMethod.POST)
   ResponseEntity<GroceryItemDto> addGroceryItem(@RequestBody GroceryItemCommand command) {
-    GroceryItem groceryItem = groceryItemService.save(GroceryItemMapper.of(command));
+    var groceryItem = groceryItemService.save(GroceryItemMapper.of(command));
     if (Objects.nonNull(groceryItem))
       return new ResponseEntity<>(GroceryItemMapper.of(groceryItem), HttpStatus.CREATED);
     else
       return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-
   }
+
+  @RequestMapping(value = "/add_list", method = RequestMethod.POST)
+  @ResponseBody
+  ResponseEntity<List<GroceryItemDto>> addGroceryItemList(@RequestBody List<GroceryItemCommand> groceryItemCommands) {
+    List<GroceryItem> groceryItems = (List<GroceryItem>) groceryItemService.saveAll(GroceryItemMapper.lof(groceryItemCommands));
+    if (Objects.nonNull(groceryItems))
+      return new ResponseEntity<>(GroceryItemMapper.of(groceryItems), HttpStatus.CREATED);
+    else
+      return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+  }
+
 }
