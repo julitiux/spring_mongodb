@@ -13,12 +13,16 @@ public class GroceryItemMapper {
     return new GroceryItem(null, command.name(), command.quantity(), command.category());
   }
 
-  public static List<GroceryItem> of(List<GroceryItemCommand> itemCommands){
-    return itemCommands.stream().map(GroceryItemMapper::of).collect(Collectors.toList());
+  public static List<GroceryItem> lof(final List<GroceryItemCommand> groceryItemCommands){
+    return groceryItemCommands.stream().map(GroceryItemMapper::of).collect(Collectors.toList());
   }
 
   public static GroceryItemDto of(final GroceryItem groceryItem){
     return new GroceryItemDto(groceryItem.getName(), groceryItem.getQuantity(), groceryItem.getCategory());
+  }
+
+  public static List<GroceryItemDto> of(final List<GroceryItem> groceryItems){
+    return groceryItems.stream().map(GroceryItemMapper::of).collect(Collectors.toList());
   }
 
 }
